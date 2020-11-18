@@ -19,7 +19,7 @@ def hello():
     
     for namespace in namespace_obj:
         resp = servicediscovery.list_services(Filters=[{'Name': 'NAMESPACE_ID', 'Values': [namespace['Id']]}])
-        service_obj = [service for service in resp.get('Services', [])
+        service_obj = [service for service in resp.get('Services', [])]
 
         for service in service_obj:
             addr = "Can't resolve healthy instance(s)"
