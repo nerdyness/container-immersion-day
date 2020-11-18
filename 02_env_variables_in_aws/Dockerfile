@@ -2,8 +2,8 @@ FROM python:alpine
 
 ENV PYTHONUNBUFFERED 1
 ENV FLASK_APP=server.py
-
 ENV GREETING "Hello, world"
+EXPOSE 80
 
 
 COPY requirements.txt .
