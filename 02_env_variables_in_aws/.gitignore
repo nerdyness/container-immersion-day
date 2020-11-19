@@ -2,3 +2,5 @@ task-execution-assume-role.json
 .repo
 docker-compose.yml
 ecs-params.yml
+task-definition.json
+variables.env
