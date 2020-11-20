@@ -1,0 +1,14 @@
+version: '3'
+services:
+  web:
+    image: 945177218881.dkr.ecr.eu-west-1.amazonaws.com/ecs-immersion-day:web1
+    environment:
+      GREETING: "Hello, AWS!"
+    ports:
+      - "80:80"
+    logging:
+      driver: awslogs
+      options:
+        awslogs-group: tutorial
+        awslogs-region: eu-west-1
+        awslogs-stream-prefix: web
