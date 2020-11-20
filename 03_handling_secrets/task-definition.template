@@ -1,0 +1,32 @@
+{
+  "executionRoleArn": $MY_ROLE,
+  "containerDefinitions": [
+    {
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "cluster",
+          "awslogs-region": "eu-west-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      },
+      "portMappings": [
+        {
+          "protocol": "tcp",
+          "containerPort": 80
+        }
+      ],
+      "image": "$MY_IMAGE",
+      "essential": true,
+      "name": "my_secrets"
+    }
+  ],
+  "memory": "512",
+  "cpu": "256",
+  "taskRoleArn": $MY_ROLE,
+  "requiresCompatibilities": [
+    "FARGATE"
+  ],
+  "family": "my-secrets",
+  "networkMode": "awsvpc"
+}
